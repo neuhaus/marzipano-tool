@@ -13,6 +13,7 @@ done
 cd www.marzipano.net/tool/template
 jq -r '.[]' files.json | while read file; do
   mkdir -p "$(dirname "$file")"
-  curl -o "$file" "https://www.marzipano.net/tool/template/$file"
+  wget -O "$file" "https://www.marzipano.net/tool/template/$file"
+  sleep 1
 done
 ```
